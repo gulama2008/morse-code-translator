@@ -7,17 +7,20 @@ const textMorse = document.querySelector('#textMorse');
 const code = JSON.parse(rawData);
 console.log(code);
 
-textEng.addEventListener('keyup', e => { 
-    const engStr = textEng.value;
+const addTranslateFunc = (e,elementDestination,func) => { 
+    const str = e.target.value;
     try {
-        const morseStr = engToMorse(engStr);
-        textMorse.value = morseStr;
-    } catch (e) { 
-        alert(e.message);
-        textEng.value = engStr.substring(0, engStr.length - 1);
-    }
-});
+        const newStr = func(str);
+        elementDestination.value = newStr;
+    } catch (error) { 
+        console.log(str);
+        // alert(error.message);
+        e.target.value=str.substring(0, str.length - 1)
+    }   
+}
 
-textMorse.addEventListener('keyup', e => morseToEng(textMorse, textEng));
+textEng.addEventListener('input', e => { addTranslateFunc(e,textMorse,engToMorse)})
+
+textMorse.addEventListener('input', e => {addTranslateFunc(e,textEng,morseToEng)});
 
 

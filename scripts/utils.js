@@ -1,3 +1,4 @@
+
 const code = {
   A: ".-",
   B: "-...",
@@ -26,27 +27,13 @@ const code = {
     Z: "--..",
     " ": '/',
 };
-  //abcde
-export const invalidInputErr = new Error("Please enter only letters!");
-
+  
+export const invalidEngInputErr = new Error("Please enter only letters!");
+export const invalidMorseInputErr=new Error('Please enter only . or -')
 export const getKeyByValue = (obj,value) => { 
     return Object.keys(obj).find(key => obj[key] === value);
 }
     
-// };
-// export const engToMorse = (engStr) => {
-//   const charArr = engStr.trim().toUpperCase().split("");
-//   if (/[a-zA-Z]/.test(charArr[charArr.length - 1])) {
-//     const morseStr = charArr.map((char) => code[char]).join(" ");
-//     return morseStr;
-//   } else {
-//     const newEngStr = engStr.substring(0, engStr.length - 1);
-//     return {
-//       amendedContent:newEngStr,
-//       errorMessage:"Please enter only letters!"
-//     };
-//   }
-// };
 
 export const engToMorse = (engStr) => {
   const charArr = engStr.trim().toUpperCase().split("");
@@ -54,17 +41,26 @@ export const engToMorse = (engStr) => {
     const morseStr = charArr.map((char) => code[char]).join(" ");
     return morseStr;
   } else {
-    throw invalidInputErr;
+    throw invalidEngInputErr;
   }
 };
-//    .... ../-.-- --- ..-  --> HI YOU  ['.... ..','-.-- --- ..-']-->[['....','..'],['-.-- ---','..-']]
-//-->[[H,I],[Y,O,U]]-->['HI','YOU']
-export const morseToEng = (elementSource,elementDestination) => {
-    const wordArr = elementSource.value.trim().split('/');
-    const nestedWordArr = wordArr.map(word => word.split(' '));
-    const translatedWordArr = nestedWordArr.map(nestedArr => { 
-       return nestedArr.map(morseStr => { return getKeyByValue(code, morseStr) }).join('');
-    })
-    const engStr = translatedWordArr.join(' ');
-    elementDestination.value = engStr;
+
+export const morseToEng = (morseStr) => {
+  const cleanedMorseStr = morseStr.trim();
+  if (/[\.\-/]/.test(cleanedMorseStr[cleanedMorseStr.length - 1])||cleanedMorseStr==="") {
+    const morseArr = cleanedMorseStr.split("/");
+    const nestedMorseArr = morseArr.map((word) => word.split(" "));
+    const translatedMorseArr = nestedMorseArr.map((nestedArr) => {
+      return nestedArr
+        .map((str) => {
+          return getKeyByValue(code, str);
+        })
+        .join("");
+    });
+    const engStr = translatedMorseArr.join(" ");
+    return engStr;
+  } else {
+    throw invalidMorseInputErr;
+  }
 };
+
