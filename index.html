@@ -15,9 +15,12 @@
         <h1>Morse Code Translator</h1>
     </header>
     <form action="" class="translator">
-        <label for="textEng" class="title title--english">English -> Morse Code</label>
+        <label for="textEng" class="title title--english">English -> Morse Code (letters and numbers only)</label>
         <textarea name="english" id="textEng" placeholder="Please enter English text here..."></textarea>
-        <label for="textMorse" class="title title--morse">Morse Code -> English</label>
+        <label for="textMorse" class="title title--morse">
+            <p>Morse Code -> English ('-' and '.' only)</p>
+            <p>If you are pasting, please enter space after the text</p>
+        </label>
         <textarea name="morse" id="textMorse" placeholder="Please enter Morse code here..."></textarea>
         <button type="reset">Reset</button>
     </form>
