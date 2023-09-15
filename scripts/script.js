@@ -14,7 +14,7 @@ const addTranslateFunc = (e,elementDestination,func) => {
         elementDestination.value = newStr;
     } catch (error) { 
         console.log(str);
-        // alert(error.message);
+        alert(error.message);
         e.target.value=str.substring(0, str.length - 1)
     }   
 }

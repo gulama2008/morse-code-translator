@@ -1,0 +1,45 @@
+@use './partials/mixins.scss';
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    @include mixins.flex;
+    height: 100vh;
+    // background-image: url('../morse.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    background-color: rgba(41,41,41,255);
+    font-family: 'Inconsolata', monospace;
+    color: white;
+}
+
+form{
+    @include mixins.flex;
+    margin-top: 20px;
+}
+
+label{
+    align-self: flex-start;
+    font-size: 18px;
+}
+
+textarea{
+    resize: none;
+    border: none;
+    outline: invert;
+    width: 500px;
+    height: 200px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+button{
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    
+}

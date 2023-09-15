@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
     <script defer src="./scripts/script.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <textarea name="" id="textEng" cols="30" rows="10"></textarea>
-    <textarea name="" id="textMorse" cols="30" rows="10"></textarea>
+    <header>
+        <h1>Morse Code Translator</h1>
+    </header>
+    <form action="" class="translator">
+        <label for="textEng" class="title title--english">English -> Morse Code</label>
+        <textarea name="english" id="textEng" placeholder="Please enter English text here..."></textarea>
+        <label for="textMorse" class="title title--morse">Morse Code -> English</label>
+        <textarea name="morse" id="textMorse" placeholder="Please enter Morse code here..."></textarea>
+        <button type="reset">Reset</button>
+    </form>
+    
 </body>
 </html>

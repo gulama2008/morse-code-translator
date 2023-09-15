@@ -24,8 +24,18 @@ const code = {
   W: ".--",
   X: "-..-",
   Y: "-.--",
-    Z: "--..",
-    " ": '/',
+  Z: "--..",
+  0: "-----",
+  1: ".----",
+  2: "..---",
+  3: "...--",
+  4: "....-",
+  5: ".....",
+  6: "-....",
+  7: "--...",
+  8: "---..",
+  9: "----.",
+  " ": "/",
 };
   
 export const invalidEngInputErr = new Error("Please enter only letters!");
@@ -37,7 +47,7 @@ export const getKeyByValue = (obj,value) => {
 
 export const engToMorse = (engStr) => {
   const charArr = engStr.trim().toUpperCase().split("");
-  if (/[a-zA-Z]/.test(charArr[charArr.length - 1])) {
+  if (/[a-zA-Z0-9]/.test(charArr[charArr.length - 1])) {
     const morseStr = charArr.map((char) => code[char]).join(" ");
     return morseStr;
   } else {

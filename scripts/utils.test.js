@@ -8,17 +8,17 @@ describe('English to Morse code translator',() => {
         expect(engToMorse("How Are You")).toBe(
           ".... --- .-- / .- .-. . / -.-- --- ..-"
         );
-        expect(engToMorse("DO YOU UNDERSTAND MORSE CODE")).toBe(
-          "-.. --- / -.-- --- ..- / ..- -. -.. . .-. ... - .- -. -.. / -- --- .-. ... . / -.-. --- -.. ."
+        expect(engToMorse("nice 2 meet U")).toBe(
+          "-. .. -.-. . / ..--- / -- . . - / ..-"
         );
     })
-  it('should throw an error contains error message of "Please enter only letters!" when input is not a letter', () => { 
-    expect(() => { engToMorse('Hell2') }).toThrow(invalidEngInputErr);
+  it('should throw an error contains error message of "Please enter only letter or number!" when input is not valid', () => { 
+    expect(() => { engToMorse('Hello~') }).toThrow(invalidEngInputErr);
     expect(() => {
       engToMorse("how are yo!");
     }).toThrow(invalidEngInputErr);
     expect(() => {
-      engToMorse("5");
+      engToMorse("haha?");
     }).toThrow(invalidEngInputErr);
   })
 })
@@ -29,17 +29,7 @@ describe("Morse to English code translator", () => {
     expect(morseToEng(".... --- .-- / .- .-. . / -.-- --- ..-")).toBe("HOW ARE YOU");
     expect(morseToEng("--. --- --- -.. / - --- / ... . . / -.-- --- ..-")).toBe("GOOD TO SEE YOU");
   })
-  it('should return an object contains error message of "Please enter only letters!" when input is not a letter', () => {
-    expect(() => {
-      engToMorse("Hell2");
-    }).toThrow(invalidEngInputErr);
-    expect(() => {
-      engToMorse("how are yo!");
-    }).toThrow(invalidEngInputErr);
-    expect(() => {
-      engToMorse("5");
-    }).toThrow(invalidEngInputErr);
-  });
+  
   it('should throw an error contains error message of "Please enter only . or -" when input is not valid', () => {
     expect(() => {
       morseToEng("123");
