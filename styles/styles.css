@@ -10,7 +10,7 @@ body {
   align-items: center;
   gap: 20px;
   height: 100vh;
-  background-color: rgb(41, 41, 41);
+  background: linear-gradient(45deg, #292929, #727272);
   font-family: "Inconsolata", monospace;
   color: white;
 }
@@ -41,8 +41,12 @@ textarea {
 }
 
 button {
-  height: 30px;
+  height: 40px;
   width: 100px;
   border: none;
   border-radius: 5px;
+  background-color: #726f6f;
+  color: white;
+  font-size: 15px;
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }

@@ -38,7 +38,7 @@ const code = {
   " ": "/",
 };
   
-export const invalidEngInputErr = new Error("Please enter only letters!");
+export const invalidEngInputErr = new Error("Please enter letters and numbers only!");
 export const invalidMorseInputErr=new Error('Please enter only . or -')
 export const getKeyByValue = (obj,value) => { 
     return Object.keys(obj).find(key => obj[key] === value);
