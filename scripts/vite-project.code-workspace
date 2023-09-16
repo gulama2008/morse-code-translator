@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../../vite-project"
+	},
+	{
+		"path": ".."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "morse-code-translator"
+  }
+}

@@ -7,12 +7,7 @@
 body{
     @include mixins.flex;
     height: 100vh;
-    // background-image: url('../morse.jpg');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-color: rgba(41,41,41,255);
-    background: linear-gradient(45deg,#292929,#727272);
-    
+    background-color:#292929 ;
     font-family: 'Inconsolata', monospace;
     color: white;
 }
@@ -43,7 +38,7 @@ button{
     width: 100px;
     border: none;
     border-radius: 5px;
-    background-color: #726f6f;
+    background-color: #545454;
     color: white;
     font-size: 15px;
     box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
