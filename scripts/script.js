@@ -21,13 +21,13 @@ const addTranslateFunc = (e,elementDestination,func) => {
 
 textEng.addEventListener('input', e => { addTranslateFunc(e,textMorse,engToMorse)})
 
-// textMorse.addEventListener('input', e => {addTranslateFunc(e,textEng,morseToEng)});
+textMorse.addEventListener('input', e => {addTranslateFunc(e,textEng,morseToEng)});
 
-textMorse.addEventListener('keyup', e => { 
-    console.log(e);
-    if (e.keyCode === 191 || e.keyCode === 32) { 
-        addTranslateFunc(e, textEng, morseToEng);
-    }
-})
+// textMorse.addEventListener('keyup', e => { 
+//     console.log(e);
+//     if (e.keyCode === 191 || e.keyCode === 32) { 
+//         addTranslateFunc(e, textEng, morseToEng);
+//     }
+// })
 
 
